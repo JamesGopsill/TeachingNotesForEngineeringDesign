@@ -1,0 +1,36 @@
+{{> header}}
+
+<body>
+
+{{> nav}}
+
+<div class="container">
+
+  <h2>Notes</h2>
+
+  <div class="input-group">
+    <span class="input-group-addon">Filter</span>
+    <input id="filter" type="text" class="form-control" placeholder="Filter">
+  </div>
+
+  <hr>
+
+  {{#each collections.posts}}
+    <div class="card">
+      <div class="card-header">
+        <h4>{{title}}</h4>
+        <p><small>{{author}}</small></p>
+      </div>
+      <div class="card-body">
+        <p>{{abstract}}</p>
+        <a href="{{path}}" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  {{/each}}
+
+  {{> footer}}
+  {{> filter}}
+</div>
+
+</body>
+</html>
